@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Kido Naoto</title>
+    <link>https://naotoman.github.io/hugo-pages/tags/</link>
+    <description>Recent content in Tags on Kido Naoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Aug 2020 18:15:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://naotoman.github.io/hugo-pages/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://naotoman.github.io/hugo-pages/tags/algorithm/</link>
+      <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
+      
+      <guid>https://naotoman.github.io/hugo-pages/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://naotoman.github.io/hugo-pages/tags/python/</link>
+      <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
+      
+      <guid>https://naotoman.github.io/hugo-pages/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

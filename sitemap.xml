@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/tags/algorithm/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/categories/blog/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/categories/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/2020/08/comparing-two-jsons-with-float-values-in-python/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/post/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/tags/python/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/tags/</loc>
+    <lastmod>2020-08-10T18:15:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/about/</loc>
+    <lastmod>2020-08-10T16:36:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naotoman.github.io/hugo-pages/archives/</loc>
+  </url>
+  
+</urlset>

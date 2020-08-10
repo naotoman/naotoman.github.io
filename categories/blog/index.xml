@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Kido Naoto</title>
+    <link>https://naotoman.github.io/hugo-pages/categories/blog/</link>
+    <description>Recent content in blog on Kido Naoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Aug 2020 18:15:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://naotoman.github.io/hugo-pages/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparing two JSONs with float values in Python</title>
+      <link>https://naotoman.github.io/hugo-pages/2020/08/comparing-two-jsons-with-float-values-in-python/</link>
+      <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
+      
+      <guid>https://naotoman.github.io/hugo-pages/2020/08/comparing-two-jsons-with-float-values-in-python/</guid>
+      <description>&lt;p&gt;JSON objects are often used while we write programs.
+I will introduce the way to compare two JSONs with float values for approximate equality in Python.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
