@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Kido Naoto</title>
-    <link>https://naotoman.github.io/categories/</link>
+    <link>https://www.kidonaoto.com/categories/</link>
     <description>Recent content in Categories on Kido Naoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Aug 2020 18:15:27 +0900</lastBuildDate>
     
-	<atom:link href="https://naotoman.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.kidonaoto.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>blog</title>
-      <link>https://naotoman.github.io/categories/blog/</link>
+      <link>https://www.kidonaoto.com/categories/blog/</link>
       <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
       
-      <guid>https://naotoman.github.io/categories/blog/</guid>
+      <guid>https://www.kidonaoto.com/categories/blog/</guid>
       <description></description>
     </item>
     
