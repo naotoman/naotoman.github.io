@@ -17,8 +17,8 @@ I will introduce the way to compare two JSONs with float values for approximate 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Comparing two JSONs with float values in Python">
 <meta name="twitter:title" content="Comparing two JSONs with float values in Python">
-<meta property="og:url" content="https://www.kidonaoto.com/comparing-two-jsons-with-float-values-in-python/">
-<meta property="twitter:url" content="https://www.kidonaoto.com/comparing-two-jsons-with-float-values-in-python/">
+<meta property="og:url" content="https://www.kidonaoto.com/post/comparing-two-jsons-with-float-values-in-python/">
+<meta property="twitter:url" content="https://www.kidonaoto.com/post/comparing-two-jsons-with-float-values-in-python/">
 <meta property="og:site_name" content="Kido Naoto">
 <meta property="og:description" content="JSON objects are often used while we write programs.
 I will introduce the way to compare two JSONs with float values for approximate equality in Python.">
@@ -63,8 +63,8 @@ I will introduce the way to compare two JSONs with float values for approximate 
 
 
 
-  <meta property="og:image" content="https://www.kidonaoto.com/img/myface.jpg">
-  <meta property="twitter:image" content="https://www.kidonaoto.com/img/myface.jpg">
+  <meta property="og:image" content="https://www.kidonaoto.com/images/myface.jpg">
+  <meta property="twitter:image" content="https://www.kidonaoto.com/images/myface.jpg">
 
 
     <title>Comparing two JSONs with float values in Python</title>
@@ -74,7 +74,7 @@ I will introduce the way to compare two JSONs with float values for approximate 
 
     
 
-    <link rel="canonical" href="https://www.kidonaoto.com/comparing-two-jsons-with-float-values-in-python/">
+    <link rel="canonical" href="https://www.kidonaoto.com/post/comparing-two-jsons-with-float-values-in-python/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -88,6 +88,19 @@ I will introduce the way to compare two JSONs with float values for approximate 
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-175203558-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
     
     
   </head>
@@ -107,7 +120,7 @@ I will introduce the way to compare two JSONs with float values for approximate 
     
     
       
-        <img class="header-picture" src="https://www.kidonaoto.com/img/myface.jpg" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
       
     
     </a>
@@ -119,7 +132,7 @@ I will introduce the way to compare two JSONs with float values for approximate 
     
       <div class="sidebar-profile">
         <a href="https://www.kidonaoto.com/#about">
-          <img class="sidebar-profile-picture" src="https://www.kidonaoto.com/img/myface.jpg" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Kido Naoto</h4>
         
@@ -400,19 +413,19 @@ For example, if the object has values of type <code>numpy.int64</code>, <code>se
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.kidonaoto.com%2Fcomparing-two-jsons-with-float-values-in-python%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.kidonaoto.com%2Fpost%2Fcomparing-two-jsons-with-float-values-in-python%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.kidonaoto.com%2Fcomparing-two-jsons-with-float-values-in-python%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.kidonaoto.com%2Fpost%2Fcomparing-two-jsons-with-float-values-in-python%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.kidonaoto.com%2Fcomparing-two-jsons-with-float-values-in-python%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.kidonaoto.com%2Fpost%2Fcomparing-two-jsons-with-float-values-in-python%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -428,7 +441,7 @@ For example, if the object has values of type <code>numpy.int64</code>, <code>se
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.kidonaoto.com/img/myface.jpg" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Kido Naoto</h4>
     
@@ -456,7 +469,7 @@ For example, if the object has values of type <code>numpy.int64</code>, <code>se
     
   
     
-      <div id="cover" style="background-image:url('https://www.kidonaoto.com/img/cover.jpg');"></div>
+      <div id="cover" style="background-image:url('https://www.kidonaoto.com/images/cover.jpg');"></div>
     
   
 
@@ -504,9 +517,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/www.kidonaoto.com\/comparing-two-jsons-with-float-values-in-python\/';
+          this.page.url = 'https:\/\/www.kidonaoto.com\/post\/comparing-two-jsons-with-float-values-in-python\/';
           
-            this.page.identifier = '\/comparing-two-jsons-with-float-values-in-python\/'
+            this.page.identifier = '\/post\/comparing-two-jsons-with-float-values-in-python\/'
           
         };
         (function() {
