@@ -13,10 +13,10 @@
     
     <item>
       <title>Comparing two JSONs with float values in Python</title>
-      <link>https://www.kidonaoto.com/2020/08/comparing-two-jsons-with-float-values-in-python/</link>
+      <link>https://www.kidonaoto.com/comparing-two-jsons-with-float-values-in-python/</link>
       <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
       
-      <guid>https://www.kidonaoto.com/2020/08/comparing-two-jsons-with-float-values-in-python/</guid>
+      <guid>https://www.kidonaoto.com/comparing-two-jsons-with-float-values-in-python/</guid>
       <description>&lt;p&gt;JSON objects are often used while we write programs.
 I will introduce the way to compare two JSONs with float values for approximate equality in Python.&lt;/p&gt;</description>
     </item>
