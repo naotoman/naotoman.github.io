@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on Kido Naoto</title>
-    <link>https://www.kidonaoto.com/categories/blog/</link>
-    <description>Recent content in blog on Kido Naoto</description>
+    <title>Hugo on Kido Naoto</title>
+    <link>https://www.kidonaoto.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Kido Naoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Aug 2020 16:38:31 +0900</lastBuildDate>
     
-	<atom:link href="https://www.kidonaoto.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.kidonaoto.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://www.kidonaoto.com/i-made-this-site-with-an-awesome-static-site-generator-hugo/</guid>
       <description>&lt;p&gt;This site is built with &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Hugo is written in Go and is one of the most popular open-source static site generators. Hugo allows you to create a rich static site easily. You don&amp;rsquo;t have to be a professional front-end web developer or an experienced Go programmer. All you have to do is edit a toml file and write your posts as a markdown format.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Comparing two JSONs with float values in Python</title>
-      <link>https://www.kidonaoto.com/post/comparing-two-jsons-with-float-values-in-python/</link>
-      <pubDate>Mon, 10 Aug 2020 18:15:27 +0900</pubDate>
-      
-      <guid>https://www.kidonaoto.com/post/comparing-two-jsons-with-float-values-in-python/</guid>
-      <description>&lt;p&gt;JSON objects are often used while we write programs.
-I will introduce the way to compare two JSONs with float values for approximate equality in Python.&lt;/p&gt;</description>
     </item>
     
   </channel>

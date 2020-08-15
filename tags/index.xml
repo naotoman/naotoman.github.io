@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Kido Naoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2020 18:15:27 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2020 16:38:31 +0900</lastBuildDate>
     
 	<atom:link href="https://www.kidonaoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://www.kidonaoto.com/tags/hugo/</link>
+      <pubDate>Sat, 15 Aug 2020 16:38:31 +0900</pubDate>
+      
+      <guid>https://www.kidonaoto.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>This site</title>
+      <link>https://www.kidonaoto.com/tags/this-site/</link>
+      <pubDate>Sat, 15 Aug 2020 16:38:31 +0900</pubDate>
+      
+      <guid>https://www.kidonaoto.com/tags/this-site/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Algorithm</title>
