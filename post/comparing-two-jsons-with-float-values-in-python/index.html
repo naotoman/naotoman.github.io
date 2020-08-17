@@ -262,13 +262,13 @@ I will introduce the way to compare two JSONs with float values for approximate 
 <h2 id="background">Background</h2>
 <p>I encountered the situation where I have to compare two json objects for equality in Python.
 But there was a problem.
-Each json objects may include float values and I wanted to assume two JSONs are equal if there is only a slight difference between those float values.
-As below, it&rsquo;s cannot be done with Python&rsquo;s builtin <code>==</code> operator.</p>
+Each JSON object may include float values and I wanted to assume two JSONs are equal if there is only a slight difference between those float values.
+As below, it cannot be done with Python&rsquo;s builtin <code>==</code> operator.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js1 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#ae81ff">1.0000000000</span>}
 js2 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#ae81ff">1.0000000001</span>}
 <span style="color:#66d9ef">assert</span> js1 <span style="color:#f92672">==</span> js2  <span style="color:#75715e"># False</span>
 </code></pre></div><p>Python also has builtin <code>json</code> module, but there seems to be no functions that can be used for this purpose.
-So, I decided to create a function for my own.</p>
+So, I decided to create a function on my own.</p>
 <h2 id="definition-of-approximate-equality">Definition of (approximate) equality</h2>
 <p>Before we go, we have to define (approximate) equality of float values.
 So in this time, two float values are assumed to be approximately equal if these are strictly equal when being rounded to a certain number of significant figures.
@@ -356,11 +356,11 @@ JsonType <span style="color:#f92672">=</span> Optional[Union[dict, list, str, fl
     new_js2 <span style="color:#f92672">=</span> _float_to_str_in_json(js2)
 
     <span style="color:#66d9ef">return</span> new_js1 <span style="color:#f92672">==</span> new_js2
-</code></pre></div><p>This function returns <code>True</code> if <code>js</code> and <code>js2</code> are approximately equal.
+</code></pre></div><p>This function returns <code>True</code> if <code>js1</code> and <code>js2</code> are approximately equal.
 If Neither of them includes float values, it just returns the result of <code>js1 == js2</code>.
 You can specify significant figures as <code>precision</code>.</p>
 <p>In addition, this function raises <code>TypeError</code> if one of <code>js1</code> or <code>js2</code> is not a valid json object.
-For example, if the object has values of type <code>numpy.int64</code>, <code>set</code>, or keys of type <code>int</code>, it raises exception.</p>
+For example, if the object has values of type <code>numpy.int64</code>, <code>set</code>, or keys of type <code>int</code>, it raises an exception.</p>
 <p>More about Json</p>
 <ul>
 <li><a href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a></li>
