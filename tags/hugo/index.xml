@@ -6,10 +6,19 @@
     <description>Recent content in Hugo on Kido Naoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2020 16:38:31 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 22:43:27 +0900</lastBuildDate>
     
 	<atom:link href="https://www.kidonaoto.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automating the deployment of this blog with github actions</title>
+      <link>https://www.kidonaoto.com/post/automating-the-deployment-of-this-blog-with-github-actions/</link>
+      <pubDate>Sun, 30 Aug 2020 22:43:27 +0900</pubDate>
+      
+      <guid>https://www.kidonaoto.com/post/automating-the-deployment-of-this-blog-with-github-actions/</guid>
+      <description>&lt;p&gt;I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>I made this site with an awesome static site generator Hugo!</title>

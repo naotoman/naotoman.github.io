@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Kido Naoto">
+<meta name="keywords" content="">
+<meta name="description" content="I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.">
+
+
+<meta property="og:description" content="I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automating the deployment of this blog with github actions">
+<meta name="twitter:title" content="Automating the deployment of this blog with github actions">
+<meta property="og:url" content="https://www.kidonaoto.com/post/automating-the-deployment-of-this-blog-with-github-actions/">
+<meta property="twitter:url" content="https://www.kidonaoto.com/post/automating-the-deployment-of-this-blog-with-github-actions/">
+<meta property="og:site_name" content="Kido Naoto">
+<meta property="og:description" content="I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.">
+<meta name="twitter:description" content="I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-08-30T22:43:27">
+  
+  
+    <meta property="article:modified_time" content="2020-08-30T22:43:27">
+  
+  
+  
+    
+      <meta property="article:section" content="blog">
+    
+  
+  
+    
+      <meta property="article:tag" content="Hugo">
+    
+      <meta property="article:tag" content="This site">
+    
+      <meta property="article:tag" content="CI/CD">
+    
+      <meta property="article:tag" content="github actions">
+    
+      <meta property="article:tag" content="github pages">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@naoto89800114">
+
+
+  <meta name="twitter:creator" content="@naoto89800114">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.kidonaoto.com/images/githubaction.png">
+  <meta property="twitter:image" content="https://www.kidonaoto.com/images/githubaction.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.kidonaoto.com/images/myface.jpg">
+  <meta property="twitter:image" content="https://www.kidonaoto.com/images/myface.jpg">
+
+
+    <title>Automating the deployment of this blog with github actions</title>
+
+    <link rel="icon" href="https://www.kidonaoto.com/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://www.kidonaoto.com/post/automating-the-deployment-of-this-blog-with-github-actions/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://www.kidonaoto.com/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-175203558-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://www.kidonaoto.com/">Kido Naoto</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://www.kidonaoto.com/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://www.kidonaoto.com/#about">
+          <img class="sidebar-profile-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Kido Naoto</h4>
+        
+          <h5 class="sidebar-profile-bio">I&rsquo;m a software/data engineer in Tokyo.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.kidonaoto.com/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.kidonaoto.com/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.kidonaoto.com/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/naotoman" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/naoto-kido-b388471a9/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin" title='LinkedIn'></i>
+      
+      <span class="sidebar-button-desc">Linkedin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/naoto89800114" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter" title='Twitter'></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Automating the deployment of this blog with github actions
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-08-30T22:43:27&#43;09:00">
+        
+  August 30, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://www.kidonaoto.com/categories/blog">blog</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>I automated the deploy process of this blog by using github actions. This site is built with Hugo and hosted by github pages. At first I did the deploy process manually, but now this site is automatically updated when I write a new post and push it to master.</p>
+<h1 id="background">Background</h1>
+<p>In Hugo, you can make a directory called <code>public</code> in which all the contents that are necessary to the site are constructed by Running the command <code>hugo</code>. You can host the website by placing these contents under the web server&rsquo;s root directory. If you use github pages as an hosting service, There are several options. In my case, I made a repository called <code>naotoman.github.io</code> (naotoman is my github username) and stored the contents under its root directory.</p>
+<p>I use the repository called <code>hugo-mywebsite</code> for pre-rendered contents of this site.
+Therefore, I had to do these following processes in order to deploy the site after I wrote a post and pushed the change to master.</p>
+<ol>
+<li>clean up unnecessary files under the <code>public</code> directory to remove deleted posts</li>
+<li>run <code>hugo</code></li>
+<li>change the current directory to <code>public/</code></li>
+<li>commit and push the change to the master branch of <code>naotoman.github.io</code> repository.</li>
+</ol>
+<h1 id="automation">Automation</h1>
+<p>I automated the above process by using github actions. I wrote the following yaml file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: rebuild-website
+
+<span style="color:#66d9ef">on</span>:
+  <span style="color:#66d9ef">push</span>:
+    <span style="color:#66d9ef">branches</span>:
+    - master
+
+<span style="color:#66d9ef">jobs</span>:
+  <span style="color:#66d9ef">build-and-deploy</span>:
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">steps</span>:
+    - <span style="color:#66d9ef">name</span>: install-hugo
+      <span style="color:#66d9ef">working-directory</span>: /tmp
+      <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">        wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Linux-64bit.deb</span>
+        sudo apt install ./hugo_0<span style="color:#ae81ff">.74</span>.3_Linux-64bit.deb
+    - <span style="color:#66d9ef">uses</span>: actions/checkout@v2
+      <span style="color:#66d9ef">with</span>:
+        <span style="color:#66d9ef">submodules</span>: <span style="color:#66d9ef">true</span>
+    - <span style="color:#66d9ef">uses</span>: actions/checkout@v2
+      <span style="color:#66d9ef">with</span>:
+        <span style="color:#66d9ef">repository</span>: naotoman/naotoman.github.io
+        <span style="color:#66d9ef">path</span>: public
+        <span style="color:#66d9ef">persist-credentials</span>: <span style="color:#66d9ef">false</span>
+    - <span style="color:#66d9ef">name</span>: clean-public
+      <span style="color:#66d9ef">working-directory</span>: ./public
+      <span style="color:#66d9ef">run</span>: ls -A | grep -v -E <span style="color:#e6db74">&#39;^.git$|^.gitignore$|^CNAME$&#39;</span> | xargs rm -rf
+    - <span style="color:#66d9ef">name</span>: run-hugo
+      <span style="color:#66d9ef">run</span>: hugo
+    - <span style="color:#66d9ef">name</span>: deploy
+      <span style="color:#66d9ef">working-directory</span>: ./public
+      <span style="color:#66d9ef">env</span>:
+        <span style="color:#66d9ef">EMAIL</span>: ${{ secrets.EMAIL }}
+        <span style="color:#66d9ef">ACCESS_TOKEN</span>: ${{ secrets.ACCESS_TOKEN }}
+      <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">        git config user.name &#34;Naoto&#34;</span>
+        git config user.email <span style="color:#e6db74">&#34;$EMAIL&#34;</span>
+        git add .
+        git commit -m <span style="color:#e6db74">&#34;Rebuild site $(date &#39;+%Y/%m/%d %H:%M:%S&#39;)&#34;</span>
+        git push https://naotoman:${ACCESS_TOKEN}@github.com/naotoman/naotoman.github.io.git
+</code></pre></div><p>I will explain important parts of this config file.</p>
+<p>To push to a different repository, <code>persist-credentials</code> should be set to <code>false</code> when you checkout that repository. In this case I wanted to push to <code>naotoman.github.io</code> repository. All the files and directories except <code>.git</code>, <code>.gitignore</code>, and <code>CNAME</code> have to be deleted before running <code>hugo</code>. You have to set an access token in order to let the CD runner to push to the repository.</p>
+<h1 id="related-repos">Related repos</h1>
+<ul>
+<li>Build: <a href="https://github.com/naotoman/hugo-mywebsite">https://github.com/naotoman/hugo-mywebsite</a></li>
+<li>Deploy: <a href="https://github.com/naotoman/naotoman.github.io">https://github.com/naotoman/naotoman.github.io</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://www.kidonaoto.com/tags/hugo/">Hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.kidonaoto.com/tags/this-site/">This site</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.kidonaoto.com/tags/ci/cd/">CI/CD</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.kidonaoto.com/tags/github-actions/">github actions</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.kidonaoto.com/tags/github-pages/">github pages</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Kido Naoto.
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.kidonaoto.com/images/myface.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Kido Naoto</h4>
+    
+      <div id="about-card-bio">I&rsquo;m a software/data engineer in Tokyo.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software/Data engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Tokyo, Japan
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://www.kidonaoto.com/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://www.kidonaoto.com/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/www.kidonaoto.com\/post\/automating-the-deployment-of-this-blog-with-github-actions\/';
+          
+            this.page.identifier = '\/post\/automating-the-deployment-of-this-blog-with-github-actions\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'kidonaoto';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
